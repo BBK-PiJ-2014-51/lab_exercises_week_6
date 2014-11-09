@@ -87,4 +87,21 @@ public class Matrix {
 	private boolean isColInBounds(int colIndex){
 		return (colIndex < this.numCols && colIndex >= 0) ? true : false;
 	}
+	
+	/* ex 5 */
+	public boolean isRowSymmetric(int row){
+		MatrixChecker checker = new MatrixChecker();
+		return checker.isSymmetrical(theMatrix[row]);
+	}
+	
+	public boolean isMatrixSymmetric(){
+		MatrixChecker checker = new MatrixChecker();
+		return checker.isSymmetrical(theMatrix);
+	}
+	
+	public boolean isMatrixTriangular(){
+		MatrixChecker checker = new MatrixChecker();
+		return checker.isTriangular(theMatrix);	
+	}	
+	
 }
