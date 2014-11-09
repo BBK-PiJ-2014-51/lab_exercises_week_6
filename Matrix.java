@@ -102,6 +102,28 @@ public class Matrix {
 	public boolean isMatrixTriangular(){
 		MatrixChecker checker = new MatrixChecker();
 		return checker.isTriangular(theMatrix);	
+	}
+	
+	/* ex 4*/
+	public void setMatrix(String matrixAsString) {
+		int currentIndex = 0;
+		for (int i = 0; i < numRows; i++){
+			String row = "";
+			if (currentIndex < matrixAsString.length()){
+				while (matrixAsString.charAt(currentIndex) != ';'){
+					if (currentIndex == matrixAsString.length() - 1){
+						row += matrixAsString.substring(currentIndex);
+					} else {
+						row += matrixAsString.substring(currentIndex,currentIndex + 1);
+					}
+					currentIndex++;
+					if (currentIndex == matrixAsString.length()) break;
+				}
+				this.setRow(i, row);
+				currentIndex++;
+			}
+		}
+		
 	}	
 	
 }
